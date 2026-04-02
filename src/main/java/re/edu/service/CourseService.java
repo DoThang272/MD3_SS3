@@ -10,13 +10,22 @@ import java.util.List;
 
 @Service
 public class CourseService {
-    private final CourseRepository courseRepository;
+//    private final CourseRepository courseRepository;
+//
+//    @Autowired
+//    public CourseService(CourseRepository courseRepository) {
+//        this.courseRepository = courseRepository;
+//    }
+//    public List<Course> findAll(){
+//       return courseRepository.findAll();
+//    }
+//
+//    public Course findById(int id){
+//        return courseRepository.findById(id);
+//    }
+//
+//    public Course addNewCourse(Course course){
+//        return courseRepository.create(course);
+//    }
 
-    @Autowired
-    public CourseService(CourseRepository courseRepository) {
-        this.courseRepository = courseRepository;
-    }
-    public List<Course> findAll(){
-       return courseRepository.findAll();
-    }
 }

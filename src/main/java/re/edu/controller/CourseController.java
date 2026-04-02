@@ -1,28 +1,42 @@
 package re.edu.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import re.edu.model.Course;
 import re.edu.service.CourseService;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-@Controller
+@RestController
 @RequestMapping("/api/v1/courses")
+@RequiredArgsConstructor
 public class CourseController {
-    private final CourseService courseService;
-
-    @Autowired
-    public CourseController(CourseService courseService) {
-        this.courseService = courseService;
-    }
-
-    @GetMapping
-    @ResponseBody
-    public List<Course> getAll(){
-        return courseService.findAll();
-    }
+//    private final CourseService courseService;
+//
+//
+//    @GetMapping
+//    public Map<String, Object> getAll(){
+//        Map<String, Object> map = new HashMap<>();
+//        map.put("data", courseService.findAll());
+//        map.put("code", 200);
+//        return map;
+//    }
+//
+//    @GetMapping("/{id}")
+//    public ResponseEntity<?> getById(@PathVariable int id){
+//        Course course = courseService.findById(id);
+//        if (course == null){
+//            return ResponseEntity.notFound().build();
+//        }
+//        return new ResponseEntity<>(course, HttpStatus.OK);
+//    }
+//
+//    @PostMapping
+//    public ResponseEntity<Course> create(@RequestBody Course course){
+//        Course created = courseService.addNewCourse(course);
+//        return ResponseEntity.status(201).body(created);
+//    }
 }

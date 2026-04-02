@@ -13,15 +13,15 @@ import java.util.List;
 @Controller
 @RequestMapping("/api/v1/instructors")
 public class InstructorController {
-    private final InstructorService instructorService;
-
-    @Autowired
-    public InstructorController(InstructorService instructorService) {
-        this.instructorService = instructorService;
-    }
-
-
-    public List<Instructor> getAll() {
-        return instructorService.findAll();
-    }
+//    private final InstructorService instructorService;
+//
+//    @Autowired
+//    public InstructorController(InstructorService instructorService) {
+//        this.instructorService = instructorService;
+//    }
+//
+//
+//    public List<Instructor> getAll() {
+//        return instructorService.findAll();
+//    }
 }
