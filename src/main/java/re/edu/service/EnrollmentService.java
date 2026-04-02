@@ -2,7 +2,7 @@ package re.edu.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import re.edu.model.Enrollment;
+import re.edu.model.StudentEnrollment;
 import re.edu.repository.EnrollmentRepository;
 
 import java.util.List;
@@ -16,7 +16,7 @@ public class EnrollmentService {
         this.enrollmentRepository = enrollmentRepository;
     }
 
-    public List<Enrollment> findAll(){
+    public List<StudentEnrollment> findAll(){
         return enrollmentRepository.findAll();
     }
 }

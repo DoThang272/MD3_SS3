@@ -3,11 +3,13 @@ package re.edu.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Builder
+//@Builder
 @Entity
 @Table(name = "courses")
 public class Course {
@@ -22,7 +24,11 @@ public class Course {
     @Column(nullable = false)
     private EnumCourse status;
 
-    @Column(nullable = false)
-    private int instructorId;
+    @ManyToOne
+    @JoinColumn(name = "instructor_id")
+    private Instructor instructor;
+
+    @OneToMany(mappedBy = "course")
+    private List<StudentEnrollment> studentEnrollments;
 
 }

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import re.edu.model.Enrollment;
+import re.edu.model.StudentEnrollment;
 import re.edu.service.EnrollmentService;
 
 import java.util.List;
@@ -22,7 +22,7 @@ public class EnrollmentController {
 
     @GetMapping
     @ResponseBody
-    public List<Enrollment> getAll(){
+    public List<StudentEnrollment> getAll(){
         return enrollmentService.findAll();
     }
 
